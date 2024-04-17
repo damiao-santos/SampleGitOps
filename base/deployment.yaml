@@ -5,24 +5,24 @@ metadata:
 spec:
     replicas: 1
     selector:
-    matchLabels:
+      matchLabels:
         app: caddy
     template:
-    metadata:
+      metadata:
         labels:
         app: caddy
-    spec:
+      spec:
         containers:
         - name: caddy
-        image: caddy:alpine
-        ports:
-          - containerPort: 80
-            name: http
-        volumeMounts:
-          - name: caddy-config
-            mountPath: /etc/caddy/
-            readOnly: true
-        volumes:
-        - name: caddy-config
-        configMap:
+          image: caddy:alpine
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - name: caddy-config
+              mountPath: /etc/caddy/
+              readOnly: true
+          volumes:
+            - name: caddy-config
+          configMap:
             name: caddy-config
