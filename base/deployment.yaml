@@ -1,19 +1,28 @@
 apiVersion: apps/v1
-kind: Deployment 
+kind: Deployment
 metadata:
-  name: nginx-deployment
+    name: caddy-deployment
 spec:
-  selector:
+    replicas: 1
+    selector:
     matchLabels:
-      app: nginx
-  replicas: 3
-  template:
+        app: caddy
+    template:
     metadata:
-      labels:
-        app: nginx
+        labels:
+        app: caddy
     spec:
-      containers:
-        - name: nginx
-          image: nginx
-          ports:
-            - containerPort: 80
+        containers:
+        - name: caddy
+        image: caddy:alpine
+        ports:
+        - containerPort: 80
+            name: http
+        volumeMounts:
+        - name: caddy-config
+            mountPath: /etc/caddy/
+            readOnly: true
+        volumes:
+        - name: caddy-config
+        configMap:
+            name: caddy-config
