@@ -10,7 +10,7 @@ spec:
     - http:
         paths:
         - path: /caddy
-        pathType: Prefix
+          pathType: Prefix
         backend:
             service:
             name: caddy-service
