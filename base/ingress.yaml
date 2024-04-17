@@ -6,12 +6,12 @@ spec:
     ingressClassName: nginx
     rules:
     - host: example.com
-    http:
+      http:
         paths:
-            - path: /
-              pathType: Prefix
-        backend:
+        - path: /
+          pathType: Prefix
+          backend:
             service:
-                name: caddy-service
+            name: caddy-service
             port:
                 name: http
