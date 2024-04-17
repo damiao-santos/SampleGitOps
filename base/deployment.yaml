@@ -22,7 +22,8 @@ spec:
               - name: caddy-config
                 mountPath: /etc/caddy/
                 readOnly: true
+            configMap:
+                name: caddy-config
         volumes:
           - name: caddy-config
-        configMap:
-          name: caddy-config
+
