@@ -11,7 +11,7 @@ spec:
         paths:
         - path: /caddy
           pathType: Prefix
-        backend:
+          backend:
             service:
             name: caddy-service
             port:
