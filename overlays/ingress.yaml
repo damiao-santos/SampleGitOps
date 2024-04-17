@@ -13,6 +13,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-            name: caddy-service
-            port:
-                name: http
+                name: caddy-service
+                port:
+                    name: http
