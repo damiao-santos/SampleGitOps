@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: onepageapp-primary
+  name: onepageapp-secondary
   namespace: argocd
 spec:
   project: default
@@ -10,7 +10,7 @@ spec:
     path: onepageapp
     targetRevision: main
   destination:
-    server: 'https://192.168.1.113:6443'
+    server: 'https://192.168.1.114:6443'
     namespace: default
   syncPolicy:
     automated:
