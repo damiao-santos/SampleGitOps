@@ -13,7 +13,7 @@ data:
     </head>
     <body>
         <h1>Welcome to the Dummy HTTP Server!</h1>
-        <p>This is some dummy content.</p>
+        <p>This is some dummy content on development.</p>
     </body>
     </html>
 

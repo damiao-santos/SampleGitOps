@@ -14,13 +14,13 @@ spec:
         revision: dev
   template:
     metadata:
-      name: '{{cluster}}-onepageserver'
+      name: '{{cluster}}-onepageapp'
     spec:
       project: default
       source:
         repoURL: git@github.com:damiao-santos/SampleGitOps.git
         targetRevision: '{{revision}}'
-        path: onepageserver
+        path: onepageapp
       destination:
         server: '{{url}}'
         namespace: default
