@@ -2,11 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
     name: caddy-ingress
+    annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
     ingressClassName: nginx
-    rules:
-    - host: argocd-dev.damtest.br
-      http:
+    http:
         paths:
         - path: /caddy
           pathType: Prefix
