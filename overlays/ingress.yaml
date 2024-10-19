@@ -7,11 +7,12 @@ metadata:
 spec:
     ingressClassName: nginx
     rules:
-    - http:
+    - host: argocd-dev.damtest.br
+      http:
         paths:
         - path: /caddy
-          pathType: Prefix
-          backend:
+        pathType: Prefix
+        backend:
             service:
                 name: caddy-service
                 port:
