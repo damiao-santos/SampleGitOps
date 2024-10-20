@@ -8,11 +8,11 @@ spec:
     ingressClassName: nginx
     rules:
     - host: damiao.com
-    http:
+      http:
         paths:
         - path: /caddy
-        pathType: Prefix
-        backend:
+          pathType: Prefix
+          backend:
             service:
                 name: caddy-service
                 port:
